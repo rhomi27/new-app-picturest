@@ -1,5 +1,4 @@
-<div
-                    class="flex justify-start pl-6 shadow-inner rounded-lg items-center gap-4 h-full min-h-[100px] max-h-full max-w-screen-sm p-2 pt-4 overflow-y-hidden overflow-x-scroll scroll transition-all duration-300 group">
+<div id="list-album" class="flex justify-start pl-6 shadow-inner rounded-lg items-center gap-4 h-full min-h-[100px] max-h-full max-w-screen-sm p-2 pt-4 overflow-y-hidden overflow-x-scroll scroll transition-all duration-300 group">
                     @if (Auth::user()->id === $data->id)
                         <button id="new-album"
                             class="flex flex-col justify-center items-center hover:scale-105 scale-100 transition-all duration-200">
@@ -19,7 +18,7 @@
                             <h1 class="text-xs lg:text-sm text-black">New</h1>
                         </button>
                     @endif
-                    <a href="detail-album.html"
+                    {{-- <a href="detail-album.html"
                         class="flex flex-col justify-center items-center hover:scale-105 scale-100 transition-all duration-200">
                         <img class="h-14 w-14 border-2 border-blue-600 rounded-full object-cover" src="assets/img/img1.jpg"
                             alt="">
@@ -30,5 +29,5 @@
                         <img class="w-14 h-14 border-2 border-blue-600 rounded-full object-cover" src="assets/img/img.jpg"
                             alt="">
                         <h1 class="text-xs lg:text-sm text-black">Album 2</h1>
-                    </a>
+                    </a> --}}
                 </div>

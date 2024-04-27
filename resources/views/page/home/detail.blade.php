@@ -9,8 +9,9 @@
 @endpush
 @section('content')
     <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky w-full z-30 top-0 start-0 drop-shadow-md">
-        <div class="w-full flex justify-between items-center p-2">
-            <a onclick="goBack()" class="flex items-center pl-5 text-black text-lg font-bold">
+        <div class="w-full flex justify-between items-center p-2 pl-5">
+            <a onclick="goBack()"
+                class="flex items-center p-1 text-black bg-blue-300 rounded-full text-lg font-bold cursor-pointer">
                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24">
                     <path
                         d="M.88,14.09,4.75,18a1,1,0,0,0,1.42,0h0a1,1,0,0,0,0-1.42L2.61,13H23a1,1,0,0,0,1-1h0a1,1,0,0,0-1-1H2.55L6.17,7.38A1,1,0,0,0,6.17,6h0A1,1,0,0,0,4.75,6L.88,9.85A3,3,0,0,0,.88,14.09Z" />
@@ -26,8 +27,7 @@
         <div class="container mx-auto p-5 w-full md:w-11/12 lg:w-4/5">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 mt-5">
                 <!-- kiri -->
-                <div 
-                    class="relative w-full lg:max-h-[85vh] md:max-h-[65vh] min-h-[60vh] sm:min-h-[65vh] lg:min-h-[85vh]">
+                <div class="relative w-full lg:max-h-[85vh] md:max-h-[65vh] min-h-[60vh] sm:min-h-[65vh] lg:min-h-[85vh]">
                     <img src="{{ asset('photo/' . $photos->image) }}" class="absolute z-0 w-full h-full rounded" />
                     <div class="absolute z-[5] w-full h-full bg-black bg-opacity-50 backdrop-blur rounded"></div>
                     <!-- Gambar asli -->
@@ -35,7 +35,7 @@
                         src="{{ asset('photo/' . $photos->image) }}" alt="gambar" />
                 </div>
                 <!-- kanan -->
-                <div 
+                <div
                     class="w-full lg:max-h-[85vh] min-h-full sm:min-h-[65vh]  md:max-h-[65vh] lg:min-h-[85vh] border border-gray-300 bg-white shadow-md rounded sm:overflow-y-scroll barscroll">
                     <!-- header -->
                     <div class="sticky start-0 top-0 z-20 flex justify-between bg-white border-b p-2 items-center px-5">

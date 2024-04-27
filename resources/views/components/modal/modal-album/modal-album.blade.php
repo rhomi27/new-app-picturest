@@ -1,3 +1,4 @@
+
 <div id="create-album" tabindex="-1" 
     class="hidden scroll overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="fixed top-0 right-0 bottom-0 left-0 bg-gradient-to-tr from-blue-950 to-red-900 opacity-90"></div>
@@ -21,7 +22,7 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form class="mb-6 p-5">
+            <form id="form-add-album" class="mb-6 p-5">
                 <div class="flex flex-col justify-center">
                     <div class="flex justify-center items-center p-1 mb-2">
                         <div class="flex flex-col">
@@ -44,29 +45,38 @@
                                             (MAX. 8 MB)</p>
                                     </div>
                                 </label>
-                                <input class="hidden" onchange="viewThumbnail()" type="file" name="thumbnail"
+                                <input class="hidden required-album" onchange="viewThumbnail()" type="file" name="thumbnail"
                                     id="thumbnail">
                                 <img src="" id="previewThumbnail"
                                     class="hidden w-full h-full max-h-[300px] object-contain rounded-md" alt="gambar">
                             </div>
+                            <p id="thumbnail-error" class="text-xs text-center text-red-600 mb-2 pl-3"></p>
                             <label for="thumbnail"
                                 class="border text-center px-5 p-1 text-sm font-semibold border-blue-600 rounded-md cursor-pointer text-blue-950 scale-100 hover:scale-95 transition-all duration-300 hover:bg-gradient-to-r from-blue-700 to-blue-400 hover:text-white">
                                 Select thumbnail
                             </label>
                         </div>
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-2 relative">
                         <label for="title-album" class="block pl-1 text-sm mb-1 font-semibold">Title*</label>
+                        <div class="absolute right-2 top-2 text-xs text-gray-600 cursor-none">
+                            <span id="title-album-count">0</span>/<span id="title-album-max">30</span>
+                        </div>
                         <input type="text" name="title_album" id="title-album"
                             placeholder="fill in the title album text input"
-                            class="p-1 text-sm text-black bg-gradient-to-r from-white to-blue-100 px-2 rounded-md w-full border-blue-600 outline-none placeholder-gray-500">
+                            class="p-1 required-album max-text-album text-sm text-black bg-gradient-to-r from-white to-blue-100 px-2 rounded-md w-full border-blue-600 focus:ring-0 outline-none placeholder-gray-500">
+                            <p id="title-album-error" class="text-xs text-red-600 pl-3"></p>
                     </div>
-                    <div class="mb-5">
-                        <label for="deskription-album"
-                            class="block pl-1 text-sm mb-1 font-semibold">Deskription*</label>
-                        <textarea type="text" name="deskription_album" id="deskription-album"
-                            placeholder="fill in the deskription album text input"
-                            class="p-1 text-sm text-black bg-gradient-to-r from-white to-blue-100 px-2 rounded-md w-full border-blue-600 outline-none placeholder-gray-500"></textarea>
+                    <div class="mb-5 relative">
+                        <label for="description-album"
+                            class="block pl-1 text-sm mb-1 font-semibold">Description*</label>
+                            <div class="absolute right-2 top-2 text-xs text-gray-600 cursor-none">
+                                <span id="description-album-count">0</span>/<span id="description-album-max">255</span>
+                            </div>
+                        <textarea type="text" name="description_album" id="description-album"
+                            placeholder="fill in the description album text input"
+                            class="p-1 required-album max-text-album text-sm text-black bg-gradient-to-r from-white to-blue-100 px-2 rounded-md w-full border-blue-600 outline-none focus:ring-0 placeholder-gray-500"></textarea>
+                            <p id="description-album-error" class="text-xs text-red-600 pl-3"></p>
                     </div>
                 </div>
                 <div class="flex justify-end items-center mt-3 gap-3">
@@ -74,7 +84,7 @@
                         class="text-center text-sm font-medium text-white border border-red-600 bg-red-600 px-4 p-1 rounded-md hover:bg-red-200 hover:text-red-600 transition-all duration-200">
                         Cancel
                     </button>
-                    <button type="submit"
+                    <button type="submit" id="save-album"
                         class="text-center text-sm font-medium text-white border border-blue-600 bg-blue-600 px-4 p-1 rounded-md hover:bg-blue-200 hover:text-blue-600 transition-all duration-200">
                         Save
                     </button>

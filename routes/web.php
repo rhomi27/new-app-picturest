@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ExploreController;
-use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\AlbumsController;
+use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FacebookController;
 
@@ -46,6 +47,9 @@ Route::middleware(['authen'])->group(function () {
     Route::get('/picturest/upload/photodraf={photo:uuid}', [PhotoController::class, 'update'])->name('picturest.upload.draf');
     Route::get('/picturest/photodraf', [PhotoController::class, 'photoDraf']);
     Route::post('/picturest/upload/photos', [PhotoController::class,'upload'])->name('upload.photos');
+
+    Route::post('/picturest/upload/album',[AlbumsController::class,'create'])->name('upload.album');
+    Route::get('/picturest/album', [AlbumsController::class,'index']);
 
 
     Route::get('/picturest/profile/@_{user:name}', [ProfileController::class,'index']);

@@ -72,8 +72,11 @@ $(document).ready(function () {
                 success: function (res) {
                     if(res.status == 400){
                         validasi('fileImage', res.error.image)
+                        validasi('title', res.error.title)
+                        validasi('description', res.error.description)
+                        validasi('private', res.error.private)
                         setTimeout(() => {
-                            $('#fileImage-error').empty();
+                            $('#fileImage-error', 'title-error','description-error', 'private-error').empty();
                         }, 3000);
                     }else if(res.data.photo_draft === 'on'){
                         window.location.href = '/picturest/photodraf'
@@ -101,9 +104,6 @@ $(document).ready(function () {
                     console.log(error);
                 }
             })
-
-
-            
         }
 
     });

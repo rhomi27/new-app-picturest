@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('title');
-            $table->text('deskription');
+            $table->text('description');
             $table->string('thumbnail');
             $table->timestamps();
         });

@@ -36,7 +36,10 @@ class PhotoController extends Controller
     public function upload(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'image' => 'mimes:png,jpg,jpeg|image|max:7000'
+            'title' => 'required|max:30',
+            'image' => 'required|mimes:png,jpg,jpeg|image|max:7000',
+            'deskription' => 'max:500',
+            'private'=> 'required',
         ]);
         if ($validator->fails()) {
             return response()->json([
